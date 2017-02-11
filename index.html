@@ -135,25 +135,9 @@
     </section>
 
     <!-- Map Section -->
-    <div id="map">
-    <script>
-      function initMap() {
-        var uluru = {lat: 43.850785, lng: -79.020746};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
+    <div id="map"></div>
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFDber21cZ5GHb6BE4sKpzbDNopKAXzhA&sensor=false"></script> -->
-    <script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFDber21cZ5GHb6BE4sKpzbDNopKAXzhA&callback=initMap"></script>
-    </div>
-    
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFDber21cZ5GHb6BE4sKpzbDNopKAXzhA&sensor=false"></script>
 
     <!-- Footer -->
     <footer>
