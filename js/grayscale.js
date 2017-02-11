@@ -37,7 +37,7 @@ var map = null;
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);
 google.maps.event.addDomListener(window, 'resize', function() {
-    map.setCenter(new google.maps.LatLng(43.850785, -79.020746));
+    map.setCenter(new google.maps.LatLng(43.850785,-79.020746));
 });
 
 function init() {
@@ -45,10 +45,10 @@ function init() {
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     var mapOptions = {
         // How zoomed in you want the map to start at (always required)
-        zoom: 10,
+        zoom: 5,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(43.850785, -79.020746), // Ajax, ON
+        center: new google.maps.LatLng(43.850785,-79.020746), // Ajax, ON
 
         // Disables the default Google Maps UI components
         disableDefaultUI: true,
@@ -235,7 +235,7 @@ function init() {
 
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
     var image = 'img/map-marker.png';
-    var myLatLng = new google.maps.LatLng(43.850785, -79.020746);
+    var myLatLng = new google.maps.LatLng(43.850785,-79.020746);
     var beachMarker = new google.maps.Marker({
         position: myLatLng,
         map: map,
