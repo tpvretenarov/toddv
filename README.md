@@ -1,5 +1,3 @@
-# [Start Bootstrap](http://startbootstrap.com/) 
-
 ## My website
 My website uses bootstrap and javascript as the technologies for the animations, transitions, and theme design.
 
