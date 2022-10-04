@@ -7,12 +7,12 @@ const Home = () => {
   return (
     <HomeContainer className="d-flex flex-column h-100">
       <NavBar />
-      <Body className="h-100">
+      <Body className="d-flex flex-column container">
         <ParagraphText>Hi, my name is</ParagraphText>
         <TitleText>Todor Vretenarov.</TitleText>
         <TitleText>I'm a web developer with a passion for creating.</TitleText>
       </Body>
-      <Footer />
+      {/* <Footer /> */}
     </HomeContainer>
   )
 }
@@ -25,7 +25,6 @@ const HomeContainer = styled.div`
 const Body = styled.div`
   background-color: #1f4158;
   color: #fff;
-  overflow: scroll;
 `;
 
 const TitleText = styled.h1`
