@@ -43,6 +43,7 @@ const NavContainer = styled.div`
 
 const PageLink = styled.a`
   color: #fff;
+  font-size:14px;
   cursor: pointer;
   text-decoration: none;
   font-family: "Lucida Console", monospace;
