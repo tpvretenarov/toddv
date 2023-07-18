@@ -1,18 +1,22 @@
 import React from 'react'
 import styled from 'styled-components';
 import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
 
 const Home = () => {
   return (
     <HomeContainer className="d-flex flex-column h-100">
       <NavBar />
-      <Body className="h-100">
-        <ParagraphText>Hi, my name is</ParagraphText>
-        <TitleText>Todor Vretenarov.</TitleText>
-        <TitleText>I'm a web developer with a passion for creating.</TitleText>
+      <Body className="h-100 mx-4">
+        <IntroPage>
+          <ParagraphText>Hi, my name is</ParagraphText>
+          <TitleText>Todor Vretenarov.</TitleText>
+          <TitleText>Web Developer.</TitleText>
+        </IntroPage>
+        <PageDiv>About</PageDiv>
+        <PageDiv>Experience</PageDiv>
+        <PageDiv>Work</PageDiv>
+        <PageDiv>Contact</PageDiv>
       </Body>
-      <Footer />
     </HomeContainer>
   )
 }
@@ -26,6 +30,22 @@ const Body = styled.div`
   background-color: #1f4158;
   color: #fff;
   overflow: scroll;
+  scroll-snap-type: y proximity;
+`;
+
+const IntroPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  scroll-snap-align: center;
+`;
+
+const PageDiv = styled.div`
+  height: 100%;
+  width: 100%;
+  scroll-snap-align: start;
 `;
 
 const TitleText = styled.h1`
@@ -35,6 +55,9 @@ const TitleText = styled.h1`
 
 const ParagraphText = styled.p`
   font-size: 16px;
+  color: #64ffda;
+  text-decoration: none;
+  font-family: "Lucida Console", monospace;
 `;
 
 export default Home;
