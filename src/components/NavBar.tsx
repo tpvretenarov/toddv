@@ -3,61 +3,58 @@ import styled from "styled-components";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import HamburgerIcon from "./HamburgerIcon";
 
-const NavBar = () => {
-  const [parent] = useAutoAnimate();
-  const [open, setOpen] = useState(false);
+const NAV_ITEMS = [
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#work", label: "Work" },
+  { href: "#contact", label: "Contact" },
+];
 
-  return (
-    <NavContainer className="w-full p-4" ref={parent}>
-      <div className="flex items-center justify-between">
-        <div>
-          <PageLink href="#intro">ToddV</PageLink>
-        </div>
-        <div className="hidden md:block">
-          <PageLink href="#about" className="mx-3">
-            About
-          </PageLink>
-          <PageLink href="#experience" className="mx-3">
-            Experience
-          </PageLink>
-          <PageLink href="#work" className="mx-3">
-            Work
-          </PageLink>
-          <PageLink href="#contact" className="mx-3">
-            Contact
-          </PageLink>
-          <ButtonLink className="mx-3">Resume</ButtonLink>
-        </div>
-        <div className="block md:hidden">
-          <HamburgerIcon open={open} onClick={setOpen} />
-        </div>
-      </div>
-      {open ? (
-        <div className="flex flex-col md:hidden">
-          <PageLink href="#about" className="my-2">
-            About
-          </PageLink>
-          <PageLink href="#experience" className="my-2">
-            Experience
-          </PageLink>
-          <PageLink href="#work" className="my-2">
-            Work
-          </PageLink>
-          <PageLink href="#contact" className="my-2">
-            Contact
-          </PageLink>
-          <PageLink href="#resume" className="my-2">
-            Resume
-          </PageLink>
-        </div>
-      ) : null}
-    </NavContainer>
-  );
+const useMobileMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+  return { isOpen, toggle };
 };
 
-const NavContainer = styled.div`
-  background-color: #1f4158;
-`;
+const NavBar = () => {
+  const [parent] = useAutoAnimate();
+  const { isOpen, toggle } = useMobileMenu();
+
+  return (
+    <nav className="w-full bg-[#1f4158] p-4" ref={parent}>
+      <div className="flex items-center justify-between">
+        <div>
+          <a
+            href="#intro"
+            className="font-mono text-sm text-white hover:text-[#64ffda]"
+          >
+            ToddV
+          </a>
+        </div>
+        <div className="hidden md:block">
+          <NavLinks className="mx-3 font-mono text-sm text-white hover:text-[#64ffda]" />
+          <button className="mx-3 rounded border border-[#64ffda] bg-[#1f4158] px-2 py-1 font-mono text-[#64ffda] hover:bg-[#64ffda] hover:text-[#1f4158]">
+            Resume
+          </button>
+        </div>
+        <div className="block md:hidden">
+          <HamburgerIcon open={isOpen} onClick={toggle} />
+        </div>
+      </div>
+      {isOpen ? (
+        <div className="flex flex-col md:hidden">
+          <NavLinks className="my-2 font-mono text-sm text-white hover:text-[#64ffda]" />
+          <a
+            href="#resume"
+            className="my-2 font-mono text-sm text-white hover:text-[#64ffda]"
+          >
+            Resume
+          </a>
+        </div>
+      ) : null}
+    </nav>
+  );
+};
 
 const PageLink = styled.a`
   color: #fff;
@@ -71,18 +68,14 @@ const PageLink = styled.a`
   }
 `;
 
-const ButtonLink = styled.button`
-  border: 1px solid #64ffda;
-  font-family: "Lucida Console", monospace;
-  color: #64ffda;
-  background-color: #1f4158;
-  border-radius: 4px;
-  padding: 5px;
-
-  :hover {
-    color: #1f4158;
-    background-color: #64ffda;
-  }
-`;
+const NavLinks = ({ className }: { className?: string }) => (
+  <>
+    {NAV_ITEMS.map((item) => (
+      <PageLink key={item.href} href={item.href} className={className}>
+        {item.label}
+      </PageLink>
+    ))}
+  </>
+);
 
 export default NavBar;
