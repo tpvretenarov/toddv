@@ -8,12 +8,13 @@ const Sidebar = () => {
   return (
     <section
       id="intro"
-      className="flex w-full flex-col lg:sticky lg:top-0 lg:h-screen lg:w-1/2 lg:justify-between lg:py-28 lg:pl-24 lg:pr-8"
+      className="flex w-full flex-col lg:h-screen lg:w-1/2 lg:justify-between lg:py-12 lg:pl-24 lg:pr-8 xl:py-28"
     >
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2 }}
+        className="flex flex-col lg:min-h-0 lg:flex-1"
       >
         <h1 className="m-0 font-sans text-[clamp(30px,8vw,50px)] font-bold leading-none">
           Todor Vretenarov
@@ -30,7 +31,7 @@ const Sidebar = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="mt-8 flex max-h-[50vh] justify-center lg:mt-16"
+          className="mt-8 flex max-h-[50vh] justify-center lg:mt-16 lg:min-h-0 lg:max-h-none lg:flex-1"
         >
           <motion.img
             initial={{ opacity: 0, y: 20 }}
@@ -38,7 +39,7 @@ const Sidebar = () => {
             transition={{ delay: 0.6 }}
             src={profile}
             alt="Professional headshot of Todor Vretenarov"
-            className="h-auto w-full rounded-lg object-cover"
+            className="h-auto w-full rounded-lg object-cover lg:max-h-full"
             loading="eager"
           />
         </motion.div>

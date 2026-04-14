@@ -7,9 +7,9 @@ function App() {
   return (
     <>
       <SEO />
-      <div className="container mx-auto flex h-full flex-col p-8 text-white antialiased lg:flex-row lg:p-0">
+      <div className="container mx-auto flex h-full flex-col p-8 text-white antialiased lg:h-screen lg:flex-row lg:overflow-hidden lg:p-0">
         <Sidebar />
-        <div className="w-full lg:w-1/2 lg:pl-8 lg:pr-24">
+        <div className="w-full lg:h-screen lg:w-1/2 lg:overflow-y-auto lg:py-12 lg:pl-8 lg:pr-24 xl:py-28">
           <About />
           <Experience />
         </div>

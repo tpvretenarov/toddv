@@ -11,6 +11,22 @@ interface ExperienceData {
   tech: string[];
 }
 
+const techUrls: Record<string, string> = {
+  React: "https://react.dev",
+  TypeScript: "https://www.typescriptlang.org",
+  "shadcn/ui": "https://ui.shadcn.com",
+  NodeJS: "https://nodejs.org",
+  "AWS Bedrock": "https://aws.amazon.com/bedrock/",
+  Weaviate: "https://weaviate.io",
+  Python: "https://www.python.org",
+  "deck.gl": "https://deck.gl",
+  AWS: "https://aws.amazon.com",
+  Recharts: "https://recharts.org",
+  Webpack: "https://webpack.js.org",
+  PostgreSQL: "https://www.postgresql.org",
+  Mapbox: "https://www.mapbox.com",
+};
+
 const experienceData: ExperienceData[] = [
   {
     title: "Lead Software Engineer",
@@ -80,7 +96,7 @@ const Experience = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <motion.section
       id="experience"
-      className="w-full py-20 lg:py-28"
+      className="w-full py-20 lg:py-12"
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +137,7 @@ const Experience = forwardRef<HTMLDivElement>((_, ref) => {
               </ul>
               <div className="flex flex-wrap gap-2 pt-2">
                 {tech.map((tech, index) => (
-                  <Pill label={tech} key={index} />
+                  <Pill label={tech} href={techUrls[tech]} key={index} />
                 ))}
               </div>
             </div>

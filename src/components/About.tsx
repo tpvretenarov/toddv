@@ -5,7 +5,7 @@ const About = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <motion.section
       id="about"
-      className="w-full pt-16 lg:pt-28"
+      className="w-full pt-16 lg:pt-0"
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
