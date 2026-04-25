@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (
     <section
       id="intro"
-      className="flex w-full flex-col lg:h-screen lg:w-1/2 lg:justify-between lg:py-12 lg:pl-24 lg:pr-8 xl:py-28"
+      className="flex w-full flex-col lg:sticky lg:top-0 lg:h-screen lg:w-1/2 lg:justify-between lg:py-12 lg:pl-24 lg:pr-8 xl:py-28"
     >
       <motion.div
         initial={{ opacity: 0, x: -20 }}
